@@ -1,13 +1,31 @@
+import { useNavigate } from 'react-router-dom';
 import { UseCart } from '../../Hooks/UseCart';
 
 export const Cart = () => {
   const { cart, addToCart,removeFromCart,
-    discountCart,clearCart } = UseCart();
+    discountCart,clearCart,buyCart } = UseCart();
+  
+    const navigate=useNavigate()
+  
+
+
+  const handleReturn=()=>{  
+      navigate(-1,{
+        replace:true
+      }) 
+      
+    
+    // return <Navigate to='/' replace='true'/>
+  }
 
   return (
     
     <>
       <header>
+      <button className='px-2 py-1 bg-green-500 text-white rounded '
+        onClick={handleReturn}>
+          Back 
+        </button>
       <button 
           className="px-2 py-1 bg-green-500 text-white rounded" 
           onClick={() => clearCart()}>
@@ -50,7 +68,12 @@ export const Cart = () => {
               </div>
             </li>
           ))}
+          <buttom onClick={()=>buyCart()}
+            className="px-2 py-2 bg-sky-500 text-white rounded">
+            BUY
+          </buttom>
         </ul>
+        
       )}
     </div>
     </>
