@@ -10,7 +10,7 @@ export const Cart = () => {
       navigate(-1,{
         replace:true
       }) 
-      // return <Navigate to='/' replace='true'/>
+      
   }
   
       const handlebuyCart=()=>{

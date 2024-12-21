@@ -6,7 +6,6 @@ export const FilterCategory = () => {
   const { filter, setFilter } = UseFilter()
 
   const handleChange = (e) => {
-    console.log(e.target.value)
     setFilter(e.target.value)
   }
 

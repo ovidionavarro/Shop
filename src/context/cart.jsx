@@ -7,10 +7,7 @@ export function CartProvider({children}){
     const [cart, setCart] = useState([])
 
     const addToCart=product=>{
-        console.log(product.id)
         const productInCartIndex=cart.findIndex((item) => item.product.id === product.id)
-        console.log('este es  carrito:',cart)
-        console.log('index',productInCartIndex)
         if(productInCartIndex>=0){
 
             const newCart=structuredClone(cart)
@@ -30,8 +27,6 @@ export function CartProvider({children}){
 
     const discountCart=product=>{
         const productInCartIndex=cart.findIndex((item) => item.product.id === product.id)
-        console.log('este es  carrito:',cart)
-        console.log('index',productInCartIndex)
         if(cart[productInCartIndex].quantity==1){
             removeFromCart(product)
         }
