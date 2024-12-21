@@ -1,7 +1,10 @@
 import React from 'react'
+import { Products } from './Products'
+import {products} from '../../models/product.json'
 
 export const Shop = () => {
   return (
-    <div>Shop</div>
+   <Products products={products}/>
   )
-}
+} 
+ 
