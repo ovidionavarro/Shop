@@ -1,11 +1,13 @@
 import React from 'react'
 import './products.css'
 import { Link } from 'react-router-dom'
+import { UseCart } from '../../Hooks/UseCart'
 
 
 
 
 export const Products = ({products}) => {
+  const{cart, addToCart, clearCart,removeFromCart}=UseCart()
   return (
     <main className='products'> 
     <ul>
@@ -18,7 +20,7 @@ export const Products = ({products}) => {
             </strong>--{product.price}
           </div>
           <div>
-            <button>
+            <button onClick={()=>addToCart(product)}>
               Add
             </button>
           </div>
