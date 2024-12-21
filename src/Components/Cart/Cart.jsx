@@ -5,10 +5,7 @@ export const Cart = () => {
   const { cart, addToCart,removeFromCart,
     discountCart,clearCart } = UseCart();
   
-    const navigate=useNavigate()
-  
-
-
+  const navigate=useNavigate()
   const handleReturn=()=>{  
       navigate(-1,{
         replace:true
@@ -21,7 +18,7 @@ export const Cart = () => {
           for (let i = 0; i < cart.length; i++) {
               cost += cart[i].product.price * cart[i].quantity ; 
           }
-          alert(`Purchase made by ${cost} `)
+           alert(`Purchase made by ${cost} `)
           clearCart()
       }
 
