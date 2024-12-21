@@ -53,13 +53,6 @@ export function CartProvider({children}){
     const clearCart=()=>{
         setCart([])
     }
-    const buyCart=()=>{
-        let cost=0
-        for (let i = 0; i < cart.length; i++) {
-            cost += cart[i].product.price * cart[i].quantity ; 
-        }
-        console.log('Ha pagado:',cost )
-    }
 
     return(
         <CartContext.Provider value={{
@@ -68,7 +61,7 @@ export function CartProvider({children}){
             clearCart,
             removeFromCart,
             discountCart,
-            buyCart
+            // buyCart
         }}>
             {children}
 
