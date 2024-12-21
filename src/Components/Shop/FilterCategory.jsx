@@ -1,17 +1,19 @@
 import React from 'react'
 import { useState } from 'react'
+import { UseFilter } from '../../Hooks/UseFilter'
 
-export const FilterCategory = ({setFilter}) => {
-    const [filterCategory, setFilterCategory] = useState('')
+export const FilterCategory = () => {
+    const{filter,setFilter}=UseFilter()
+    // const [filterCategory, setFilterCategory] = useState('')
 
     const handleChange=(e)=>{
         console.log(e.target.value)
-        setFilterCategory(e.target.value)
+        setFilter(e.target.value)
     }
 
     const handleSubmit=(e)=>{
         e.preventDefault()
-        setFilter(filterCategory)
+        setFilter(filter)
 
 
     }
@@ -20,11 +22,11 @@ export const FilterCategory = ({setFilter}) => {
         <div>
             <form  onSubmit={handleSubmit}>
                 <input
-                type='text'
+                type='text' 
                 placeholder="men's clothing"
-                name='filterCategory'
+                name='filter'
                 autoComplete='on'
-                value={filterCategory}
+                value={filter}
                 onChange={handleChange}
                 />
                 <button type='submit'>

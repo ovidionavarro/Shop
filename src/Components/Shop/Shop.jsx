@@ -2,21 +2,18 @@ import React, { useState } from 'react'
 import { Products } from './Products'
 import {products as initialState} from '../../models/product.json'
 import { Header } from './Header'
+import { UseFilter } from '../../Hooks/UseFilter'
+
 
 export const Shop = () => {
   const[products]=useState(initialState)
-  const [filter, setFilter] = useState('')
-
-  const filterCategory=(products)=>{
-    return products.filter(product=>{
-      return(filter===''||filter===product.category)
-    })
-  }
+  const{filter,filterCategory,setFilter}=UseFilter()
+ 
   const filterProducts=filterCategory(products)
 
   return (
     <>
-    <Header setFilter={setFilter}/>
+    <Header />
     <Products products={filterProducts}/>
     </>
   )
