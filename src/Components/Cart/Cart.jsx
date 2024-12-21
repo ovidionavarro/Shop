@@ -57,7 +57,7 @@ export const Cart = () => {
         <ul className="space-y-4">
           {cart.map((item) => (
             <li key={item.product.id} className="flex flex-col items-center p-4 bg-white shadow rounded">
-              <img src={item.product.image} alt={item.product.name} className="w-32 h-32 object-cover mb-4" />
+              <img src={item.product.image} alt={item.product.name} className="max-w-80 max-h-80 object-cover mb-4" />
               <div className="text-center">
                 <h2 className="text-lg font-semibold">{item.product.name}</h2>
                 <p className="text-gray-600">${item.product.price}</p>
