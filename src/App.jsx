@@ -4,7 +4,6 @@ function App() {
   
   return(
       <div>
-        <h1>wqew</h1>
         <AppRouter/>
       </div>
         )
