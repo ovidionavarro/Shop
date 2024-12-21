@@ -4,4 +4,4 @@
 - npm run dev 
 
 ### URL despliegue
-https://ovishop-8xxgwgdfd-ovidios-projects.vercel.app/
+https://shop-bmh9qhnm3-ovidios-projects.vercel.app/
